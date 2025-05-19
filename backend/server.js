@@ -4,6 +4,11 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
+const PORT = process.env.PORT || 8080; // ✅ correct: use Railway's port or fallback
+
+console.log('🧪 Starting Flowcast backend...');
+
+
 const PORT = process.env.PORT || 4000;
 
 // Optional logging to backend.log
