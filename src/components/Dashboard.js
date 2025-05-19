@@ -24,7 +24,7 @@ function Dashboard() {
 
   useEffect(() => {
     setLoading(true);
-    let url = `/api/accounts-data?`;
+    let url = `${process.env.REACT_APP_API_BASE_URL || ''}/api/accounts-data?`;
     if (search) url += `search=${encodeURIComponent(search)}&`;
     if (start) url += `start=${start}&`;
     if (end) url += `end=${end}`;
