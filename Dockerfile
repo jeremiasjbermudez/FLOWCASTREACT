@@ -7,11 +7,11 @@ WORKDIR /app
 # Copy everything
 COPY . .
 
-# Install server dependencies
+# Install dependencies
 RUN npm install
 
-# Expose app port (adjust if needed)
+# Expose your server port
 EXPOSE 4000
 
-# Start the server
+# Start the Node server
 CMD ["node", "server.js"]
