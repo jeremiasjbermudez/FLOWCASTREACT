@@ -1,17 +1,17 @@
 # Use Node base image
-FROM node:18
+FROM node:20
 
 # Set working directory
 WORKDIR /app
 
-# Copy everything
+# Copy files
 COPY . .
 
 # Install dependencies
 RUN npm install
 
-# Expose your server port
+# Expose the port your app runs on
 EXPOSE 4000
 
-# Start the Node server
+# Start your backend (adjust if needed)
 CMD ["node", "server.js"]
