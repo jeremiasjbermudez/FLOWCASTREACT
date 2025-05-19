@@ -4,6 +4,7 @@
   "description": "A finance dashboard application built with React.",
   "main": "src/index.js",
   "scripts": {
+    "start": "node server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
