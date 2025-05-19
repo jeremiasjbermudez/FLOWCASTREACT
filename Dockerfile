@@ -1,11 +1,17 @@
-# Use the official PHP image with Apache
-FROM php:8.2-apache
-
-# Enable MySQL support
-RUN docker-php-ext-install mysqli
-
-# Copy everything to Apache's web root
-COPY . /var/www/html/
+# Use Node base image
+FROM node:18
 
 # Set working directory
-WORKDIR /var/www/html
+WORKDIR /app
+
+# Copy everything
+COPY . .
+
+# Install server dependencies
+RUN npm install
+
+# Expose app port (adjust if needed)
+EXPOSE 4000
+
+# Start the server
+CMD ["node", "server.js"]
