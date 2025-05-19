@@ -61,3 +61,12 @@ app.get('*', (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+const path = require('path');
+
+// Serve frontend build
+app.use(express.static(path.join(__dirname, '../build')));
+
+// Handle React routes (like /dashboard, /goals, etc.)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
