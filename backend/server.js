@@ -48,11 +48,11 @@ app.use('/api', require('./backend/routes/reserve-chart'));
 app.use('/api', require('./backend/routes/spending-chart'));
 app.use('/api', require('./backend/routes/goalswd'));
 
-// === Serve Frontend ===
+// === Serve Frontend React Build ===
 const buildPath = path.join(__dirname, 'build');
 app.use(express.static(buildPath));
 
-// fallback to index.html for any unmatched routes (React routing)
+// fallback to index.html for client-side routes (e.g., /dashboard)
 app.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'));
 });
@@ -60,13 +60,4 @@ app.get('*', (req, res) => {
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
-});
-const path = require('path');
-
-// Serve frontend build
-app.use(express.static(path.join(__dirname, '../build')));
-
-// Handle React routes (like /dashboard, /goals, etc.)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
