@@ -1,15 +1,12 @@
+console.log('🧪 Starting Flowcast backend...');
+
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const app = express();
 
-const PORT = process.env.PORT || 8080; // ✅ correct: use Railway's port or fallback
-
-console.log('🧪 Starting Flowcast backend...');
-
-
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080; // ✅ Only this line
 
 // Optional logging to backend.log
 const logFile = path.join(__dirname, 'backend.log');
