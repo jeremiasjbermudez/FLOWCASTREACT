@@ -13,7 +13,7 @@ function Todo() {
 
   const fetchTodos = () => {
     setLoading(true);
-    fetch('/api/todo')
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/todo`)
       .then(res => res.json())
       .then(data => { setTodos(data); setLoading(false); })
       .catch(() => { setError('Failed to load todos'); setLoading(false); });
@@ -23,7 +23,7 @@ function Todo() {
 
   const handleAdd = (e) => {
     e.preventDefault();
-    fetch('/api/todo', {
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/todo`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
@@ -33,7 +33,7 @@ function Todo() {
   };
 
   const handleDelete = (id) => {
-    fetch(`/api/todo/${id}`, { method: 'DELETE' })
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/todo/${id}`, { method: 'DELETE' })
       .then(() => fetchTodos());
   };
 
@@ -44,7 +44,7 @@ function Todo() {
 
   const handleEditSave = (e) => {
     e.preventDefault();
-    fetch(`/api/todo/${editId}`, {
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/todo/${editId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(editForm)

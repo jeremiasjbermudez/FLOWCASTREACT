@@ -28,7 +28,7 @@ function Habits() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/api/habits/categories')
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/habits/categories`)
       .then(res => res.json())
       .then(setCategories);
   }, []);
@@ -38,7 +38,7 @@ function Habits() {
     if (start) params.push(`start=${start}`);
     if (end) params.push(`end=${end}`);
     if (selectedCats.length === 1) params.push(`category=${encodeURIComponent(selectedCats[0])}`);
-    fetch(`/api/habits${params.length ? '?' + params.join('&') : ''}`)
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/habits${params.length ? '?' + params.join('&') : ''}`)
       .then(res => res.json())
       .then(setHabits)
       .catch(() => setError('Failed to load habits'))

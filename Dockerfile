@@ -3,14 +3,15 @@ FROM node:20
 # Set working directory
 WORKDIR /app
 
-# Copy all files
+# Copy files and install deps
 COPY . .
-
-# Install dependencies
 RUN npm install
 
-# Expose the app port
-EXPOSE 4000
+# Build React frontend
+RUN npm run build
 
-# Start the backend
-CMD ["node", "backend/server.js"]
+# Expose app port
+EXPOSE 8080
+
+# Start server
+CMD ["node", "server.js"]

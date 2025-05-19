@@ -83,7 +83,7 @@ function Goals() {
     setLoading(true);
     setError(null);
     try {
-      await fetch('/api/goals', {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/goals`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(goalForm)
@@ -111,7 +111,7 @@ function Goals() {
         setLoading(false);
         return;
       }
-      await fetch(`/api/goals/${goalId}`, {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/goals/${goalId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editGoalForm)
@@ -133,7 +133,7 @@ function Goals() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/goals/${goal.id}`, { method: 'DELETE' });
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/goals/${goal.id}`, { method: 'DELETE' });
       fetch(`/api/goals-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
         .then(res => res.json())
         .then(setGoals);
@@ -150,7 +150,7 @@ function Goals() {
     setLoading(true);
     setError(null);
     try {
-      await fetch('/api/goals/tx', {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/goals/tx`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(txForm)
@@ -171,7 +171,7 @@ function Goals() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/goals/tx/${editTx.id}`, {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/goals/tx/${editTx.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editTxForm)
@@ -194,7 +194,7 @@ function Goals() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/goals/tx/${tx.id}`, { method: 'DELETE' });
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/goals/tx/${tx.id}`, { method: 'DELETE' });
       fetch(`/api/goals-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
         .then(res => res.json())
         .then(setGoals);

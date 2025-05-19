@@ -44,7 +44,7 @@ function Expenses() {
     setLoading(true);
     setError(null);
     try {
-      await fetch('/api/expenses', {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/expenses`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, DateAdded: form.DateAdded.filter(Boolean) })
@@ -66,7 +66,7 @@ function Expenses() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/expenses/${editRow.ID}`, {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/expenses/${editRow.ID}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editForm)
@@ -89,7 +89,7 @@ function Expenses() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/expenses/${row.ID}`, { method: 'DELETE' });
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/expenses/${row.ID}`, { method: 'DELETE' });
       fetch(`/api/expenses-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
         .then(res => res.json())
         .then(setExpenses);

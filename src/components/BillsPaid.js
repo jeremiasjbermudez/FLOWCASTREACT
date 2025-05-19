@@ -48,7 +48,7 @@ function BillsPaid() {
     setPopulateLoading(true);
     setPopulateMsg("");
     try {
-      const res = await fetch('/api/bills-paid/populate', { method: 'POST' });
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/bills-paid/populate`, { method: 'POST' });
       const text = await res.text();
       setPopulateMsg(text || 'Bills Paid populated.');
       // Refresh

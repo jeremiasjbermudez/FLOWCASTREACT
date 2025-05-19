@@ -18,7 +18,7 @@ function Forecast() {
 
   // Fetch default start/end dates on mount
   useEffect(() => {
-    fetch('/api/forecast-table/defaults')
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/forecast-table/defaults`)
       .then(res => res.json())
       .then(({ defaultStart, defaultEnd }) => {
         // Convert to yyyy-MM-dd if needed

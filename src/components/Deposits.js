@@ -31,7 +31,7 @@ function Deposits() {
   // Fetch deposits
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
+    fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
       .then(res => res.json())
       .then(setDeposits)
       .catch(() => setError('Failed to load deposits'))
@@ -44,14 +44,14 @@ function Deposits() {
     setLoading(true);
     setError(null);
     try {
-      await fetch('/api/deposits', {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, DateAdded: form.DateAdded.filter(Boolean) })
       });
       setForm(initialForm);
       setAddOpen(false);
-      fetch(`/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
+      fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
         .then(res => res.json())
         .then(setDeposits);
     } catch (err) {
@@ -66,14 +66,14 @@ function Deposits() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/deposits/${editRow.ID}`, {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits/${editRow.ID}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editForm)
       });
       setEditRow(null);
       setEditForm(initialForm);
-      fetch(`/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
+      fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
         .then(res => res.json())
         .then(setDeposits);
     } catch (err) {
@@ -89,8 +89,8 @@ function Deposits() {
     setLoading(true);
     setError(null);
     try {
-      await fetch(`/api/deposits/${row.ID}`, { method: 'DELETE' });
-      fetch(`/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
+      await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits/${row.ID}`, { method: 'DELETE' });
+      fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/deposits-table${search ? `?q=${encodeURIComponent(search)}` : ''}`)
         .then(res => res.json())
         .then(setDeposits);
     } catch (err) {

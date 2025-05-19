@@ -65,7 +65,7 @@ function Bills() {
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch('/api/bills', {
+      const resp = await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/bills`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, DayOfMonth: form.DayOfMonth.filter(Boolean) })

@@ -32,7 +32,7 @@ function UpdateTables() {
       return;
     }
     try {
-      const res = await fetch('/api/update-tables', {
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL || ''}/api/update-tables`, {
         method: 'POST',
         body: formData
       });
