@@ -1,0 +1,21 @@
+﻿Bill,DayofMonth,Amount,Contains,account
+Best Buy,1,$44.00,Best Buy,reserve
+Citi-0471,3,$40.00,CITI,reserve
+BJJ,3,$80.00,AIRBORNE,spending
+Amazon,4,$15.00,AMZN,spending
+Game Pass,10,$20.00,ULTIMATE 1,spending
+Geico ,29,$130.00,Geico,reserve
+Champion,15,$80.00,CHAMPIONS,reserve
+Apple,15,$160.00,APPLECARD,reserve
+Nest,17,$8.00,Nest,spending
+Verizon Wireless,18,$232.00,VERIZON WIRELESS,reserve
+Cadillac,20,$221.00,ROCKETLOANS,reserve
+ChatGPT,23,$20.00,OPENAI,spending
+SJGAS,25,$100.00,SOUTH JERSEY B2P,resrve
+Verizin Home,26,$124.00,VERIZON PAYMENTREC,reserve
+Netflix,27,$25.00,Netflix,reserve
+Eleven,27,$5.00,ELEVENLABS.IO,spending
+Lorenzo,30,$45.00,LORENZO'S,spending
+Movement,30,"$1,851.64 ",Movement,growth
+Champion,30,$80.00,CHAMPIONS,reserve
+Vineland Electric,30,$200.00,CITY OF VI,

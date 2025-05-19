@@ -1,0 +1,9 @@
+
+CREATE TABLE Goals (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(255),
+  Description TEXT,
+  Withdraws DECIMAL(10,2) DEFAULT 0.00,
+  Deposits DECIMAL(10,2) DEFAULT 0.00,
+  PayDates Date
+);

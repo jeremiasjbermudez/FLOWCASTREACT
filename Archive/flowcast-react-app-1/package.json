@@ -1,0 +1,30 @@
+{
+  "name": "flowcast-react-app",
+  "version": "1.0.0",
+  "description": "A finance dashboard application built with React.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "finance",
+    "dashboard"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "5.0.0"
+  },
+  "devDependencies": {},
+  "homepage": "http://yourhomepage.com",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/yourusername/flowcast-react-app.git"
+  }
+}

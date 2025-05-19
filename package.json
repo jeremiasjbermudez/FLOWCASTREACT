@@ -1,0 +1,59 @@
+{
+  "name": "flowcast-react-app",
+  "version": "1.0.0",
+  "description": "A finance dashboard application built with React.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "finance",
+    "dashboard"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/utils": "^7.1.0",
+    "@mui/x-data-grid": "^8.3.1",
+    "bootstrap": "^5.3.6",
+    "chart.js": "^4.4.9",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.6.0",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.14.1",
+    "react": "^18.0.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.0.0",
+    "react-is": "^19.1.0",
+    "react-router-dom": "^7.6.0",
+    "react-scripts": "5.0.0",
+    "recharts": "^2.15.3"
+  },
+  "homepage": "http://yourhomepage.com",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/yourusername/flowcast-react-app.git"
+  },
+  "proxy": "http://localhost:4000",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

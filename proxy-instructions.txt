@@ -1,0 +1,4 @@
+// Add a proxy to forward API requests to the backend server on port 4000
+{
+  "proxy": "http://localhost:4000"
+}
